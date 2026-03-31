@@ -30,21 +30,22 @@ export class ErrorBoundary extends Component<Props, State> {
   public render() {
     if (this.state.hasError) {
       return (
-        <div className="min-h-screen bg-zinc-50 dark:bg-zinc-950 flex items-center justify-center p-4">
-          <div className="max-w-md w-full bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-3xl p-8 text-center shadow-xl">
-            <div className="w-16 h-16 bg-red-100 dark:bg-red-900/30 text-red-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
-              <AlertCircle size={32} />
+        <div className="min-h-screen bg-white dark:bg-black flex items-center justify-center p-4 font-mono">
+          <div className="max-w-md w-full border-4 border-red-500 p-8 text-center bg-white dark:bg-black">
+            <div className="text-red-500 flex justify-center mb-6">
+              <AlertCircle size={64} />
             </div>
-            <h2 className="text-2xl font-bold mb-2">Something went wrong</h2>
-            <p className="text-zinc-500 dark:text-zinc-400 mb-8">
-              The application encountered an unexpected error. This might be due to a very large PDF file.
+            <h2 className="text-2xl font-black mb-4 uppercase tracking-tighter text-red-500">SYSTEM CRASH</h2>
+            <p className="text-sm mb-8 uppercase opacity-70">
+              The browser ran out of memory or encountered a fatal error. 
+              PDFs with 1000+ pages or extreme resolution can be too much for some devices.
             </p>
             <button
               onClick={() => window.location.reload()}
-              className="w-full py-4 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 rounded-2xl font-bold flex items-center justify-center gap-2 hover:opacity-90 transition-opacity"
+              className="w-full py-4 bg-black dark:bg-white text-white dark:text-black font-bold border-2 border-transparent hover:border-current transition-all flex items-center justify-center gap-2 uppercase"
             >
               <RefreshCw size={20} />
-              Reload Application
+              Reboot System
             </button>
           </div>
         </div>
