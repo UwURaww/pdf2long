@@ -1,0 +1,5 @@
+{
+  "name": "PDF to Long Image",
+  "description": "Convert multi-page PDF documents into a single, continuous long image for easy sharing and viewing.",
+  "requestFramePermissions": []
+}
